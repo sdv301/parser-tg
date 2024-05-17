@@ -2,7 +2,6 @@ from LxmlSoup import LxmlSoup
 import requests
 import logging
 
-
 # Читаем файл txt в список
 with open('web.txt', 'r', encoding='utf-8', errors='replace') as f:
     urls = [url.strip() for url in f.readlines()]
@@ -28,4 +27,4 @@ with open('output.txt', 'a', encoding='utf-8', errors='replace') as f:
     print(f"Парсинг завершен {url}")
        
 
-       ghdsagnfdkgn
+  

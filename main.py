@@ -1,7 +1,7 @@
 from LxmlSoup import LxmlSoup
 import requests
 import logging
-import re
+
 
 # Читаем файл txt в список
 with open('web.txt', 'r', encoding='utf-8', errors='replace') as f:
@@ -27,3 +27,5 @@ with open('output.txt', 'a', encoding='utf-8', errors='replace') as f:
         f.write(f"{name}\n")
     print(f"Парсинг завершен {url}")
        
+
+       ghdsagnfdkgn

@@ -8,11 +8,12 @@ with open('web.txt', 'r', encoding='utf-8', errors='replace') as f:
 
 for i, url in enumerate(urls):
     try:
-        response = requests.get(url)
+        response = requests.get(url, verify=False)
         response.raise_for_status() 
-        logging.info(f"Парсим этот URL: {url}")
+        #logging.info(f"Парсим этот URL: {url}")
     except requests.RequestException as e:
-        logging.error(f"Ошибка парсинга URL: {e}")
+        #logging.error
+        print(f"Ошибка парсинга URL: {e}")
         continue
 
     html = response.text

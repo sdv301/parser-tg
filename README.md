@@ -3,5 +3,5 @@
 Для установки используйте 
 
 ```
-pip install -r sys.txt
+pip install -r requirements.txt
 ```

@@ -1,0 +1,37 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+
+# Создаем обучающую выборку
+X_train = [
+    'Это текст первой статьи',
+    'Это текст второй статьи',
+    'Это текст третьей статьи',
+]
+y_train = [
+    'Нужная информация',
+    'Нужная информация',
+    'Нужная информация',
+]
+
+# Создаем модель машинного обучения
+model = Pipeline([
+    ('vect', TfidfVectorizer()),
+    ('clf', MultinomialNB()),
+])
+
+# Обучаем модель
+model.fit(X_train, y_train)
+
+# Используем модель, чтобы идентифицировать нужную информацию на странице
+def parse_url(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Извлекаем текст со страницы
+    text = ' '.join([p.text for p in soup.find_all('p')])
+
+    # Используем модель, чтобы идентифицировать нужную информацию
+    prediction = model.predict([text])
+
+    return prediction

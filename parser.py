@@ -3,6 +3,8 @@ import requests
 import os
 from rules import parser_rules
 
+#from chat_gpt_sender import send_to_chat_gpt
+
 # Читаем файл txt в список
 with open('web.txt', 'r', encoding='utf-8', errors='replace') as f:
     urls = [url.strip() for url in f.readlines()]
@@ -30,3 +32,7 @@ for i, url in enumerate(urls):
             text = element.text().strip() 
             url = element.get("href")
             f.write(f"{text},{url}\n")
+
+    # Отправляем текст в Chat GPT
+    #answer = send_to_chat_gpt(text)
+    #print(f"ответ: {answer}")

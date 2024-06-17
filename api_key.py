@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-client = OpenAI(api_key='sk-proj-svRGS9g6MxTgMA5L1UizT3BlbkFJXKXfXJ9bycvkpn9uvmKV')
+client = OpenAI(api_key='')
 
 def gpt(text):
         response = client.chat.completions.create(

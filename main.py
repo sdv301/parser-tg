@@ -2,7 +2,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import Message
 from api_key import gpt
 
-token = '7446126916:AAE3KK496DpAZHJl0Sph2vTIyE_yOVAK6rk'
+token = ''
 
 bot = Bot(token)
 dp = Dispatcher(bot)
